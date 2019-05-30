@@ -1,0 +1,25 @@
+<p>
+  weather works!
+</p>
+
+
+  <table *ngIf="northWind" class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of northWind.Customers">
+        <td>{{i.Id}}</td>
+        <td>{{i.CompanyName}}</td>
+        <td>{{i.ContactName}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="getWeather()" >Get Weather</button>
+
+

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+//import { WeatherServiceService } from './weather-service.service'; 
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  //constructor(private _weatherService: WeatherServiceService){}
+
 }

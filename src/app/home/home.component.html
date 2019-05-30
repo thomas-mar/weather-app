@@ -1,0 +1,14 @@
+<p>
+  Welcome to my home page!
+</p>
+
+<select (change)="getWeather($event.target.value)" >
+  <option>Auckland</option>
+  <option>Wellington</option>
+  <option>Sydney</option>
+
+</select>
+
+
+
+<div>{{weatherData}}</div>
