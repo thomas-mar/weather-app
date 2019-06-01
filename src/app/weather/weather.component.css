@@ -1,0 +1,9 @@
+.city-image{
+    height: 400px;
+    object-fit: cover;
+}
+
+.city-name{
+    font-weight: 600;
+    text-shadow: 1px solid
+}

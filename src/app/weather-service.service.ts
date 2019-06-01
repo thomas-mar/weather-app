@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+
 
 
 const httpOptions = {
@@ -18,6 +18,11 @@ export class WeatherServiceService {
 
 
   getWeather(city) {
-    return this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=b0488f3ae5c9fced7ff7181e768e8557");
+    return this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=b0488f3ae5c9fced7ff7181e768e8557&units=metric");
+  }
+
+
+  getCityImage(city){
+    return this.http.get("http://api.teleport.org/api/urban_areas/slug:"+ city +"/images/")
   }
 }

@@ -1,25 +1,37 @@
-<p>
-  weather works!
-</p>
+<label>Select City</label>
+<select class="browser-default col m3" (change)="getWeather($event.target.value)">
+    <option value="" disabled selected>Choose your option</option>
+    <option>Auckland</option>
+    <option>Wellington</option>
+    <option>Christchurch</option>
+    <option>Sydney</option>
+    <option>Melbourne</option>
+    <option>Whangarei</option>
+    <option>New York</option>
+    <option>London</option>
+    <option>Paris</option>
 
 
-  <table *ngIf="northWind" class="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Contact</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let i of northWind.Customers">
-        <td>{{i.Id}}</td>
-        <td>{{i.CompanyName}}</td>
-        <td>{{i.ContactName}}</td>
-      </tr>
-    </tbody>
-  </table>
+</select>
 
-  <button (click)="getWeather()" >Get Weather</button>
+<div class="row" *ngIf="weatherData">
+    <div class="col s12 m3">
+        <div class="card blue-grey darken-1" >
+            <div class="card-image ">
+                <img class="city-image"src="{{imgUrl}}">
 
+                <span class="card-title city-name">{{weatherData.name}}</span>
+            </div>
+            <div class="card-content white-text">
+                <img class="right" src="http://openweathermap.org/img/w/{{weatherData.weather[0].icon}}.png">
+                <h4>{{weatherData.main.temp | number : '1.1-1'}}<span>&deg;C</span></h4>
+                <p><b>{{weatherData.weather[0].main}}</b> | <span>{{weatherData.weather[0].description}}</span></p>
 
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
